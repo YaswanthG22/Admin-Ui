@@ -1,0 +1,28 @@
+🎯 Step 1 — Check Client Dependencies
+
+<!-- Actuator -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+
+<!-- Spring Boot Admin Client -->
+<dependency>
+    <groupId>de.codecentric</groupId>
+    <artifactId>spring-boot-admin-starter-client</artifactId>
+    <version>3.2.3</version>
+</dependency>
+
+
+🎯 Step 2 — Configure Client application.properties
+
+
+server.port=8082
+spring.application.name=my-client-app
+
+# VERY IMPORTANT
+spring.boot.admin.client.url=http://localhost:8081
+
+# Actuator
+management.endpoints.web.exposure.include=*
+management.endpoint.health.show-details=always
